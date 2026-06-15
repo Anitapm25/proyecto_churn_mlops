@@ -56,7 +56,7 @@ El flujo básico será:
 ## Flujo del Pipeline ML-Ops
 
 <p align="center">
-  <img src="docs/imagenpipeline/pipeline_mlops.png" width="500">
+  <img src="docs/imagenpipeline/pipeline_mlops.png" width="300">
 </p>
                                           
 ## Control de versiones
