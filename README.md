@@ -52,10 +52,15 @@ El flujo básico será:
 4. Guardar las métricas.
 5. Crear una API básica.
 6. Probar el funcionamiento inicial.
-## 
+
+## Flujo del Pipeline ML-Ops
+
+<p align="center">
+  <img src="docs/imagenpipeline/pipeline_mlops.png" width="500">
+</p>
+                                          
 ## Control de versiones
 Este proyecto utiliza Git para registrar cambios y GitHub para respaldar el repositorio en la nube.
-
 El uso de commits permite mantener trazabilidad sobre los cambios realizados en el código, la documentación y la estructura del proyecto.
 
 ### Mejoras realizadas (Mayo 2026)
@@ -74,7 +79,6 @@ El uso de commits permite mantener trazabilidad sobre los cambios realizados en 
 - Ejecutar con: `python tests/test_api_nueva.py`
 
 ## Mejora técnica implementada:
-- ## Mejora técnica implementada:
 
 - Se agregó el endpoint informativo /info...
    
