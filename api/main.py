@@ -207,6 +207,8 @@ class PrediccionSalida(BaseModel):
 
     prediccion: str
     probabilidad: float
+    nivel_riesgo: str    # aqui modifique
+    recomendacion: str     # aqui modifique
     version_modelo: str
     autor: str
     alertas_datos: list[str]
@@ -307,7 +309,7 @@ def resumen_metricas() -> dict:
 app = FastAPI(
     title="API de predicción de churn con monitoreo básico",
     description="Servicio académico ML-Ops con métricas y logs.",
-    version="2.0.0",
+    version="2.0.1",
 )
 
 # ============================================================
@@ -512,12 +514,19 @@ def predict(datos: ClienteEntrada) -> PrediccionSalida:
         # Paso 3. Calcular la probabilidad de abandono.
         probabilidad = float(modelo.predict_proba(X)[0][1])
 
-        # Paso 4. Aplicar un umbral de decisión del 50 %.
-        etiqueta = (
-            "alto_riesgo"
-            if probabilidad >= 0.50
-            else "bajo_riesgo"
-        )
+        # Paso 4. Aplicar un umbral de decisión.  aqui modifique
+        if probabilidad >= 0.80:
+            etiqueta = "alto_riesgo"
+            nivel_riesgo = "ALTO"
+            recomendacion = "Contactar inmediatamente al cliente"
+        else:
+            etiqueta = "bajo_riesgo"
+            if probabilidad >= 0.50:
+                nivel_riesgo = "MEDIO"
+                recomendacion = "Realizar seguimiento preventivo"
+            else:
+                nivel_riesgo = "BAJO"
+                recomendacion = "Mantener monitoreo normal"
 
         # Paso 5. Actualizar las métricas de predicción.
         with metricas_lock:
@@ -546,6 +555,8 @@ def predict(datos: ClienteEntrada) -> PrediccionSalida:
         return PrediccionSalida(
             prediccion=etiqueta,
             probabilidad=round(probabilidad, 4),
+            nivel_riesgo=nivel_riesgo,
+            recomendacion=recomendacion,
             version_modelo=VERSION_MODELO,
             autor=AUTOR,
             alertas_datos=alertas,

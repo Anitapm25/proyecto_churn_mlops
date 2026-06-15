@@ -52,18 +52,19 @@ El flujo básico será:
 4. Guardar las métricas.
 5. Crear una API básica.
 6. Probar el funcionamiento inicial.
+## 
 ## Control de versiones
 Este proyecto utiliza Git para registrar cambios y GitHub para respaldar el repositorio en la nube.
 
 El uso de commits permite mantener trazabilidad sobre los cambios realizados en el código, la documentación y la estructura del proyecto.
 
-## 📊 Mejoras realizadas (Mayo 2026)
+### Mejoras realizadas (Mayo 2026)
 ### Algoritmos
 - Regresión Logística (base)
 - Random Forest (nuevo)
 
 ### Hiperparámetros modificados
-- Random Forest: n_estimators=200, max_depth=15
+- Random Forest: n_estimators=200, max_depth=15 
 
 ### Métricas
 - Accuracy, Precision, Recall, F1-score, **ROC-AUC (nueva)**
@@ -71,8 +72,11 @@ El uso de commits permite mantener trazabilidad sobre los cambios realizados en 
 ### Nueva prueba de API
 - Archivo: `tests/test_api_nueva.py`
 - Ejecutar con: `python tests/test_api_nueva.py`
-## Mejora técnica implementada:
-- Se agregó el endpoint informativo /info, el cual permite consultar información relevante del servicio, incluyendo el     nombre del autor, la versión del modelo y las variables utilizadas para realizar las predicciones. Esta mejora facilita la identificación y trazabilidad de la API desplegada.
 
+## Mejora técnica implementada:
+- ## Mejora técnica implementada:
+
+- Se agregó el endpoint informativo /info...
+   
 ### Autor
 Ana Luisa - Antipam25
