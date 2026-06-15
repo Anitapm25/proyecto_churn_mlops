@@ -6,6 +6,16 @@ venv/
 __pycache__/
 *.pyc
 *.pyo
+# Caché de notebooks
+.ipynb_checkpoints/
+
+# Git
+.git/
+.gitignore
+
+# Archivos temporales
+*.tmp
+*.log
 
 # Configuración local
 .env
@@ -22,6 +32,3 @@ models/*.pkl
 .DS_Store
 Thumbs.db
 
-# Archivos temporales
-*.tmp
-*.log
