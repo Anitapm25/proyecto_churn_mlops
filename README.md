@@ -41,6 +41,7 @@ proyecto_churn_mlops
 - `api`: contiene la API del modelo.
 - `tests`: contiene pruebas automáticas.
 - `docs`: contiene documentación y métricas.
+- `logs`: contienen los eventos y mensajes generados por la aplicación mientras se ejecuta dentro del contenedor.
 
 ## Flujo inicial del proyecto
 
